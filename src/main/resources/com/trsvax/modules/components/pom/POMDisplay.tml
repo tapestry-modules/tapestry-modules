@@ -1,0 +1,55 @@
+<html 
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+   
+      <p>
+      ${model.description}
+      </p>
+
+	<h3>Maven Artifact</h3>
+	<t:md.pom.artifact model="model"/>
+	
+	<t:beandisplay object="model"/>
+	
+
+	<h3>CiManagement</h3>
+	<t:if test="model.CiManagement">
+	<t:beandisplay object="model.CiManagement"/>
+	</t:if>	
+	
+	<h3>Contributors</h3>
+	<t:loop source="model.contributors" value="contributor">
+		<t:beandisplay object="contributor"/>
+	</t:loop>
+	
+	<h3>Developers</h3>
+	<t:loop source="model.developers" value="developer">
+		<t:beandisplay object="developer"/>
+	</t:loop>
+	
+	<h3>Issue Management</h3>
+	<t:if test="model.IssueManagement">
+	<t:beandisplay object="model.IssueManagement"/>
+	</t:if>
+	
+	<h3>Licenses</h3>
+	<t:loop source="model.licenses" value="license">
+		<t:beandisplay object="license"/>
+	</t:loop>
+	
+	<h3>MailingList</h3>
+	<t:loop source="model.MailingLists" value="MailingList">
+		<t:beandisplay object="MailingList"/>
+	</t:loop>
+	
+	<h3>Organization</h3>
+	<t:if test="model.organization">
+	<t:beandisplay object="model.organization"/>
+	</t:if>
+	
+	<h3>Scm</h3>
+	<t:if test="model.Scm">
+	<t:beandisplay object="model.Scm"/>
+	</t:if>
+
+</html>
